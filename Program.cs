@@ -1,41 +1,30 @@
 ﻿using System;
 
-namespace ClassMethod
+namespace Polymorphism
 {
-    class Math
+    public class Cal
     {
-
-        // Here Sum() method asks for two parameters from the user  
-        // calculates the sum of these  
-        // and finally returns the result. 
-        static int Sum(int x, int y)
+       //Method overloading by changing the number of arguments and data types
+        public static int add(int a, int b)
         {
-
-            // there are two local variables, local variable bcs we takes varibale in method  
-            int a = x;
-            int b = y;
-
-            // The local variable calculates the sum of 'a' and 'b' 
-            // and returns the result 
-            // which is of 'int' type. 
-            int result = a + b;
-
-            return result;
+            return a + b;
         }
-
-        // Main Method 
-        static void Main(string[] args)
+        public static int add(int a, int b, int c)
         {
-            int a = 12;
-            int b = 23;
-
-            // Method Sum() is invoked and  
-            // the returned value is stored  
-            // in the local variable say 'c' 
-            int c = Sum(a, b);
-
-            // Display Result 
-            Console.WriteLine("The Value of the sum is " + c);
+            return a + b + c;
+        }
+        public static float add(float a, float b)
+        {
+            return a + b;
+        }
+    }
+    public class TestMemberOverloading
+    {
+        public static void Main()
+        {
+            Console.WriteLine("Int calculation = " +Cal.add(12, 23));
+            Console.WriteLine("Int calculation = " +Cal.add(12, 23, 25));
+            Console.WriteLine("Float calcuation = " +Cal.add(21.3f, 19.9f));
         }
     }
 }
